@@ -3,7 +3,7 @@ import discord
 from discord import Intents
 import pickle
 
-#open our trained machine learning models
+#open our trained machine learning models. You will have to run NBtraining.py first.
 with open('NBclassifier.pickle', 'rb') as f:
     classifier = pickle.load(f)
 with open('vectorizer.pickle', 'rb') as f:

@@ -7,9 +7,12 @@ import pickle
 import pandas as pd
 
 #load training data into file
+#Replace this with your own training data (labeled moderated messages from your server)
 df = pd.read_csv("/Users/arthurwu/Desktop/training_dataset_NB.csv")
 
 #vectorize the text dataset we are using
+#my labels column was called "ruling", and had a value of either "mute" for a message
+#that got the user muted, and "nomute" for a message that didn't get a user penalized.
 vectorizer = CountVectorizer()
 X = vectorizer.fit_transform(df['text'])
 Y = df['ruling'].map({'mute':1, 'nomute':0})
